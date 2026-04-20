@@ -32,8 +32,6 @@ jobs:
         include:
           - os: ubuntu-latest
             artifact_name: claude-tracker-linux-x86_64
-          - os: macos-13
-            artifact_name: claude-tracker-macos-x86_64
           - os: macos-latest
             artifact_name: claude-tracker-macos-arm64
 
