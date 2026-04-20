@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # --- config ---
-REPO="rammohan-b/ClaudeUsageTrackEr"   # change to your GitHub user/repo
+REPO="rammohan-b/ClaudeUsageTrackEr"
 INSTALL_DIR="${INSTALL_DIR:-$HOME/.local/bin}"
 BINARY_NAME="claude-tracker"
 # --------------
