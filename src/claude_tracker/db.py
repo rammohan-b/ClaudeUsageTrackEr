@@ -85,6 +85,8 @@ def query_hourly(days: int = 30, db_path: Path | None = None) -> list[dict]:
     SELECT
         CAST(strftime('%H', timestamp) AS INTEGER) AS hour,
         SUM(input_tokens + output_tokens)          AS total_tokens,
+        SUM(input_tokens)                          AS input_tokens,
+        SUM(output_tokens)                         AS output_tokens,
         COUNT(*)                                   AS message_count
     FROM messages
     WHERE timestamp >= datetime('now', :offset)
@@ -95,6 +97,31 @@ def query_hourly(days: int = 30, db_path: Path | None = None) -> list[dict]:
     with get_conn(db_path) as conn:
         rows = conn.execute(sql, {"offset": offset}).fetchall()
     return [dict(r) for r in rows]
+
+
+def query_hourly_for_date(date: str, db_path: Path | None = None) -> list[dict]:
+    sql = """
+    SELECT
+        CAST(strftime('%H', timestamp) AS INTEGER) AS hour,
+        SUM(input_tokens + output_tokens)          AS total_tokens,
+        SUM(input_tokens)                          AS input_tokens,
+        SUM(output_tokens)                         AS output_tokens,
+        COUNT(*)                                   AS message_count
+    FROM messages
+    WHERE date(timestamp) = :date
+    GROUP BY hour
+    ORDER BY hour
+    """
+    with get_conn(db_path) as conn:
+        rows = conn.execute(sql, {"date": date}).fetchall()
+    return [dict(r) for r in rows]
+
+
+def query_projects_for_date(date: str, db_path: Path | None = None) -> list[str]:
+    sql = "SELECT DISTINCT project_path FROM messages WHERE date(timestamp) = :date"
+    with get_conn(db_path) as conn:
+        rows = conn.execute(sql, {"date": date}).fetchall()
+    return [r[0] for r in rows]
 
 
 def query_projects(days: int = 30, db_path: Path | None = None) -> list[dict]:

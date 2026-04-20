@@ -30,7 +30,25 @@ def api_daily():
 
 @app.get("/api/hourly")
 def api_hourly():
+    date = request.args.get("date")
+    if date:
+        return jsonify(db.query_hourly_for_date(date))
     return jsonify(db.query_hourly(_days()))
+
+
+@app.get("/api/git-activity")
+def api_git_activity():
+    date = request.args.get("date")
+    if not date:
+        return jsonify({"error": "date parameter required"}), 400
+    try:
+        hour = int(request.args.get("hour")) if request.args.get("hour") is not None else None
+    except (TypeError, ValueError):
+        hour = None
+
+    paths = db.query_projects_for_date(date)
+    from claude_tracker.git_activity import get_git_activity
+    return jsonify(get_git_activity(paths, date, hour))
 
 
 @app.get("/api/projects")

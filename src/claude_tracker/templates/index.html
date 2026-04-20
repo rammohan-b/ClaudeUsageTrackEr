@@ -29,10 +29,8 @@ body {
   background: #e8e2d8;
   background-image:
     repeating-linear-gradient(
-      transparent 0px,
-      transparent 27px,
-      rgba(0,0,0,0.045) 27px,
-      rgba(0,0,0,0.045) 28px
+      transparent 0px, transparent 27px,
+      rgba(0,0,0,0.045) 27px, rgba(0,0,0,0.045) 28px
     );
   min-height: 100vh;
   display: flex;
@@ -61,8 +59,6 @@ body {
   border-bottom: 1px solid var(--rule);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0;
   overflow: hidden;
   position: relative;
 }
@@ -71,11 +67,8 @@ body {
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 10px,
-    var(--rule) 10px,
-    var(--rule) 11px
+    90deg, transparent 0px, transparent 10px,
+    var(--rule) 10px, var(--rule) 11px
   );
   opacity: 0.5;
 }
@@ -84,10 +77,10 @@ body {
   display: flex;
   gap: 22px;
   z-index: 1;
+  margin: 0 auto;
 }
 .perf-holes span {
-  width: 10px;
-  height: 10px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   background: #e8e2d8;
   border: 1px solid var(--rule);
@@ -101,111 +94,58 @@ body {
   text-align: center;
   border-bottom: 2px solid var(--ink);
 }
-
 .head-brand {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 4px;
+  font-size: 11px; font-weight: 400;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--ink-muted); margin-bottom: 4px;
 }
-
 .head-title {
-  font-size: 38px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1;
-  color: var(--ink);
-  margin-bottom: 2px;
+  font-size: 38px; font-weight: 700;
+  letter-spacing: -0.01em; line-height: 1;
+  color: var(--ink); margin-bottom: 2px;
 }
-
 .head-subtitle {
-  font-size: 13px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink-muted);
-  letter-spacing: 0.15em;
-  margin-bottom: 20px;
+  font-size: 13px; font-weight: 400; font-style: italic;
+  color: var(--ink-muted); letter-spacing: 0.15em; margin-bottom: 20px;
 }
-
 .head-rule {
-  border: none;
-  border-top: 1px dashed var(--rule);
-  margin: 0 -40px;
+  border: none; border-top: 1px dashed var(--rule); margin: 0 -40px;
 }
-
 .head-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0 16px;
-  font-size: 11px;
-  color: var(--ink-muted);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0 16px; font-size: 11px; color: var(--ink-muted);
   letter-spacing: 0.05em;
 }
-
-.head-meta span strong {
-  color: var(--ink);
-  font-weight: 700;
-}
+.head-meta span strong { color: var(--ink); font-weight: 700; }
 
 /* Controls */
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+.controls { display: flex; align-items: center; gap: 8px; }
 select {
-  background: transparent;
-  border: 1px solid var(--rule);
-  color: var(--ink);
-  font-family: inherit;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  padding: 4px 8px;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  padding-right: 20px;
+  background: var(--paper); border: 1px solid var(--rule);
+  color: var(--ink); font-family: inherit; font-size: 11px;
+  letter-spacing: 0.05em; padding: 4px 20px 4px 8px;
+  cursor: pointer; appearance: none; -webkit-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239a9088'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 6px center;
-  background-size: 8px;
-  background-color: var(--paper);
+  background-repeat: no-repeat; background-position: right 6px center; background-size: 8px;
 }
-
 select:focus { outline: 1px solid var(--ink); }
-
 .sync-btn {
-  background: var(--ink);
-  color: var(--paper);
-  border: none;
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  cursor: pointer;
-  transition: background 0.15s;
+  background: var(--ink); color: var(--paper); border: none;
+  font-family: inherit; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 12px; cursor: pointer; transition: background 0.15s;
 }
 .sync-btn:hover { background: var(--navy); }
 .sync-btn.syncing { background: var(--ink-muted); cursor: not-allowed; }
 
 /* ── Stats Band ────────────────────────────────────────────── */
 .stats-band {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: grid; grid-template-columns: repeat(7, 1fr);
   border-bottom: 2px solid var(--ink);
 }
-
 .stat-col {
-  padding: 16px 14px 14px;
-  border-right: 1px solid var(--rule);
-  opacity: 0;
-  animation: fadeUp 0.35s ease forwards;
+  padding: 16px 14px 14px; border-right: 1px solid var(--rule);
+  opacity: 0; animation: fadeUp 0.35s ease forwards;
 }
 .stat-col:last-child { border-right: none; }
 .stat-col:nth-child(1) { animation-delay: 0.06s; }
@@ -215,139 +155,120 @@ select:focus { outline: 1px solid var(--ink); }
 .stat-col:nth-child(5) { animation-delay: 0.22s; }
 .stat-col:nth-child(6) { animation-delay: 0.26s; }
 .stat-col:nth-child(7) { animation-delay: 0.30s; }
-
 .stat-label {
-  font-size: 9.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--ink-muted);
-  margin-bottom: 6px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--ink-muted); margin-bottom: 6px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-
 .stat-value {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--ink);
-  transition: color 0.2s;
+  font-size: 22px; font-weight: 700; line-height: 1; color: var(--ink);
 }
-
 .stat-col.highlight .stat-value { color: var(--red); }
 .stat-col.navy .stat-value { color: var(--navy); }
-
-.stat-sub {
-  font-size: 9px;
-  color: var(--ink-muted);
-  font-style: italic;
-  margin-top: 3px;
-}
+.stat-sub { font-size: 9px; color: var(--ink-muted); font-style: italic; margin-top: 3px; }
 
 /* ── Section Headers ───────────────────────────────────────── */
 .section-label {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  padding: 18px 40px 0;
-  margin-bottom: -4px;
+  display: flex; align-items: center;
+  padding: 18px 40px 0; margin-bottom: -4px;
 }
-
-.section-label::before,
-.section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
+.section-label::before, .section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--rule);
 }
-
 .section-label span {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  padding: 0 14px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--ink-muted); padding: 0 14px;
 }
 
 /* ── Charts ────────────────────────────────────────────────── */
-.charts-wrap {
-  padding: 0 40px 32px;
-}
-
-.chart-block {
-  padding-top: 20px;
-}
-
+.charts-wrap { padding: 0 40px 32px; }
+.chart-block { padding-top: 20px; }
 .chart-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-top: 1px solid var(--rule);
-  margin-top: 20px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; border-top: 1px solid var(--rule); margin-top: 20px;
 }
-
-.chart-block + .section-label {
-  margin-top: 4px;
-}
-
-.chart-inner {
-  padding: 16px 20px 12px;
-}
-
-.chart-inner + .chart-inner {
-  border-left: 1px solid var(--rule);
-}
-
+.chart-inner { padding: 16px 20px 12px; }
+.chart-inner + .chart-inner { border-left: 1px solid var(--rule); }
 .chart-title {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 12px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px;
+}
+.chart-wrap { position: relative; height: 200px; }
+.chart-wrap.tall { height: 240px; }
+
+/* ── Drilldown ─────────────────────────────────────────────── */
+.drilldown-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 0 0; gap: 16px;
+}
+.back-btn {
+  background: none; border: 1px solid var(--rule); color: var(--ink-muted);
+  font-family: inherit; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 10px; cursor: pointer; transition: all 0.15s;
+}
+.back-btn:hover { border-color: var(--ink); color: var(--ink); }
+.drilldown-date {
+  font-size: 13px; font-weight: 700; color: var(--navy);
+  letter-spacing: 0.06em;
+}
+.drilldown-hint {
+  font-size: 10px; color: var(--ink-muted); font-style: italic;
 }
 
-.chart-wrap {
-  position: relative;
-  height: 200px;
+/* Cursor hint on daily chart */
+.daily-chart-wrap { position: relative; }
+.daily-chart-wrap::after {
+  content: 'CLICK A BAR TO DRILL DOWN';
+  position: absolute; bottom: -18px; right: 0;
+  font-size: 8.5px; letter-spacing: 0.15em;
+  color: var(--ink-muted); font-family: inherit;
+  opacity: 0.7;
 }
 
-.chart-wrap.tall {
-  height: 240px;
+/* ── Git Activity ──────────────────────────────────────────── */
+.git-section { border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 0; }
+.git-project {
+  margin-bottom: 20px;
 }
-
-.chart-wrap.project-wrap {
-  height: 180px;
+.git-project-name {
+  font-size: 11px; font-weight: 700; color: var(--navy);
+  letter-spacing: 0.05em; margin-bottom: 6px;
+  padding-bottom: 4px; border-bottom: 1px dashed var(--rule);
+}
+.git-commit {
+  display: grid; grid-template-columns: 42px 44px 1fr auto;
+  gap: 0 12px; padding: 3px 0;
+  font-size: 11px; line-height: 1.5;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.git-commit:last-child { border-bottom: none; }
+.git-hash { color: var(--red); font-weight: 700; }
+.git-time { color: var(--ink-muted); }
+.git-subject { color: var(--ink); }
+.git-author { color: var(--ink-muted); font-style: italic; font-size: 10px; text-align: right; }
+.git-empty {
+  font-size: 11px; color: var(--ink-muted); font-style: italic; padding: 8px 0;
 }
 
 /* ── Footer ────────────────────────────────────────────────── */
 .receipt-foot {
-  border-top: 2px solid var(--ink);
-  padding: 12px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-top: 2px solid var(--ink); padding: 12px 40px;
+  display: flex; justify-content: space-between; align-items: center;
   background: var(--paper-2);
 }
-
-.foot-text {
-  font-size: 10px;
-  color: var(--ink-muted);
-  letter-spacing: 0.05em;
-}
-
-.foot-text strong {
-  color: var(--ink);
-}
+.foot-text { font-size: 10px; color: var(--ink-muted); letter-spacing: 0.05em; }
+.foot-text strong { color: var(--ink); }
 
 /* ── Animations ────────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+.fade-in { animation: fadeIn 0.25s ease; }
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -357,8 +278,9 @@ select:focus { outline: 1px solid var(--ink); }
   .chart-inner + .chart-inner { border-left: none; border-top: 1px solid var(--rule); }
   .receipt-head, .charts-wrap, .receipt-foot, .section-label { padding-left: 20px; padding-right: 20px; }
   .head-rule { margin: 0 -20px; }
+  .git-commit { grid-template-columns: 42px 44px 1fr; }
+  .git-author { display: none; }
 }
-
 @media (max-width: 600px) {
   .stats-band { grid-template-columns: repeat(2, 1fr); }
   .stat-col:nth-child(2n) { border-right: none; }
@@ -369,14 +291,12 @@ select:focus { outline: 1px solid var(--ink); }
 <body>
 <div class="receipt">
 
-  <div class="perf">
-    <div class="perf-holes">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-  </div>
+  <div class="perf"><div class="perf-holes">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div></div>
 
   <div class="receipt-head">
     <p class="head-brand">Personal Analytics</p>
@@ -398,7 +318,7 @@ select:focus { outline: 1px solid var(--ink); }
     </div>
   </div>
 
-  <div class="stats-band" id="stats-band">
+  <div class="stats-band">
     <div class="stat-col highlight">
       <div class="stat-label">Total Tokens</div>
       <div class="stat-value" id="s-total">—</div>
@@ -430,25 +350,61 @@ select:focus { outline: 1px solid var(--ink); }
     </div>
   </div>
 
+  <!-- Daily chart — always visible -->
   <div class="section-label"><span>Daily Consumption</span></div>
   <div class="charts-wrap">
     <div class="chart-block">
       <div class="chart-inner">
-        <div class="chart-wrap tall"><canvas id="daily-chart"></canvas></div>
+        <div class="daily-chart-wrap chart-wrap tall"><canvas id="daily-chart"></canvas></div>
       </div>
     </div>
   </div>
 
-  <div class="section-label"><span>Hourly Pattern</span></div>
+  <!-- Hourly section — switches between overview aggregate and day drilldown -->
+  <div class="section-label">
+    <span id="hourly-section-label">Hourly Pattern</span>
+  </div>
   <div class="charts-wrap">
-    <div class="chart-row" style="border-top:none">
+    <!-- Drilldown bar: back button + date label (hidden in overview) -->
+    <div id="drilldown-bar" class="drilldown-bar" style="display:none">
+      <button class="back-btn" id="back-btn">← Overview</button>
+      <span class="drilldown-date" id="drilldown-date-label"></span>
+      <span class="drilldown-hint">click another bar to compare</span>
+    </div>
+
+    <!-- Overview: two-column hourly | models -->
+    <div class="chart-row" id="overview-row">
       <div class="chart-inner">
         <div class="chart-title">Activity by Hour of Day</div>
         <div class="chart-wrap"><canvas id="hourly-chart"></canvas></div>
       </div>
-      <div class="chart-inner">
+      <div class="chart-inner" id="models-col">
         <div class="chart-title">Model Distribution</div>
         <div class="chart-wrap"><canvas id="models-chart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Drilldown: full-width hourly for selected day (hidden in overview) -->
+    <div id="drilldown-row" style="display:none; padding-top:16px;">
+      <div class="chart-title" id="drilldown-chart-title">Hour-by-Hour · —</div>
+      <div class="chart-wrap tall"><canvas id="drilldown-hourly-chart"></canvas></div>
+    </div>
+
+    <!-- Git activity (hidden in overview) -->
+    <div id="git-section" class="git-section" style="display:none">
+      <div class="chart-title" style="margin-bottom:12px">Git Activity</div>
+      <div id="git-content"></div>
+    </div>
+  </div>
+
+  <!-- Models in drilldown mode gets its own section -->
+  <div id="models-section-standalone" style="display:none">
+    <div class="section-label"><span>Model Distribution</span></div>
+    <div class="charts-wrap">
+      <div class="chart-block">
+        <div class="chart-inner">
+          <div class="chart-wrap" style="height:160px"><canvas id="models-chart-standalone"></canvas></div>
+        </div>
       </div>
     </div>
   </div>
@@ -457,7 +413,7 @@ select:focus { outline: 1px solid var(--ink); }
   <div class="charts-wrap">
     <div class="chart-block">
       <div class="chart-inner">
-        <div class="chart-wrap project-wrap" id="project-wrap"><canvas id="projects-chart"></canvas></div>
+        <div class="chart-wrap" id="project-wrap" style="height:180px"><canvas id="projects-chart"></canvas></div>
       </div>
     </div>
   </div>
@@ -467,19 +423,16 @@ select:focus { outline: 1px solid var(--ink); }
     <span class="foot-text">claude-tracker · <strong>~/.claude/projects/**/*.jsonl</strong></span>
   </div>
 
-  <div class="perf">
-    <div class="perf-holes">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-  </div>
+  <div class="perf"><div class="perf-holes">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div></div>
 
 </div>
-
 <script>
-/* ── Chart global defaults ───────────────────────────────── */
+/* ── Chart defaults ────────────────────────────────────────── */
 Chart.defaults.font.family = "'Courier Prime', 'Courier New', monospace";
 Chart.defaults.font.size   = 10;
 Chart.defaults.color       = '#9a9088';
@@ -492,85 +445,60 @@ const GREEN = '#1a5934';
 const AMBER = '#92400e';
 const MUTED = '#9a9088';
 const RULE  = 'rgba(0,0,0,0.07)';
-
 const PALETTE = [NAVY, RED, GREEN, AMBER, '#5b21b6', '#0f766e', '#b45309', '#1d4ed8'];
 
 let charts = {};
+let drilldownDate = null; // null = overview mode, 'YYYY-MM-DD' = drilldown mode
 
+/* ── Utilities ─────────────────────────────────────────────── */
 function fmt(n) {
-  if (n === null || n === undefined) return '—';
-  if (n === 0) return '0';
+  if (n === null || n === undefined || n === 0) return '—';
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
   if (n >= 1_000)     return (n / 1_000).toFixed(1) + 'K';
   return String(n);
 }
 
-function gridOpts(color) {
-  return { color: color || RULE, drawTicks: false };
-}
+function gridOpts() { return { color: RULE, drawTicks: false }; }
+function tickOpts(extra) { return { padding: 6, color: MUTED, ...extra }; }
 
-function tickOpts(extra) {
-  return { padding: 6, color: MUTED, ...extra };
-}
-
-async function fetchJSON(url) {
-  return (await fetch(url)).json();
-}
-
-function days() {
-  return document.getElementById('days-select').value;
-}
+async function fetchJSON(url) { return (await fetch(url)).json(); }
+function days() { return document.getElementById('days-select').value; }
 
 function destroyChart(key) {
   if (charts[key]) { charts[key].destroy(); delete charts[key]; }
 }
 
-/* ── Number count-up animation ───────────────────────────── */
-function countUp(el, rawValue) {
-  const target = parseFloat(rawValue) || 0;
-  if (target === 0) { el.textContent = '—'; return; }
-
-  const duration = 600;
-  const start = performance.now();
-  const multiplier = rawValue >= 1_000_000 ? 1_000_000 : rawValue >= 1_000 ? 1_000 : 1;
-  const suffix    = rawValue >= 1_000_000 ? 'M' : rawValue >= 1_000 ? 'K' : '';
-  const decimals  = multiplier > 1 ? 1 : 0;
-
-  const tick = (now) => {
-    const t = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - t, 3);
-    const cur = (target / multiplier) * eased;
-    el.textContent = cur.toFixed(decimals) + suffix;
+function countUp(el, target) {
+  if (!target) { el.textContent = '—'; return; }
+  const dur = 600, start = performance.now();
+  const mult = target >= 1e6 ? 1e6 : target >= 1e3 ? 1e3 : 1;
+  const suf  = target >= 1e6 ? 'M' : target >= 1e3 ? 'K' : '';
+  const dec  = mult > 1 ? 1 : 0;
+  const tick = now => {
+    const t = Math.min((now - start) / dur, 1);
+    const e = 1 - Math.pow(1 - t, 3);
+    el.textContent = ((target / mult) * e).toFixed(dec) + suf;
     if (t < 1) requestAnimationFrame(tick);
     else el.textContent = fmt(target);
   };
   requestAnimationFrame(tick);
 }
 
-/* ── Data loading ────────────────────────────────────────── */
+/* ── Overview loaders ──────────────────────────────────────── */
 async function loadSummary() {
   const d = await fetchJSON(`/api/summary?days=${days()}`);
   const total = (d.total_input || 0) + (d.total_output || 0);
-
   const map = {
-    's-total':      total,
-    's-input':      d.total_input,
-    's-output':     d.total_output,
-    's-cache-read': d.total_cache_read,
-    's-messages':   d.total_messages,
-    's-sessions':   d.total_sessions,
-    's-projects':   d.total_projects,
+    's-total': total, 's-input': d.total_input, 's-output': d.total_output,
+    's-cache-read': d.total_cache_read, 's-messages': d.total_messages,
+    's-sessions': d.total_sessions, 's-projects': d.total_projects,
   };
-
   for (const [id, val] of Object.entries(map)) {
     const el = document.getElementById(id);
     if (el) countUp(el, val || 0);
   }
-
-  if (d.first_day && d.last_day) {
-    document.getElementById('ref-date').textContent =
-      `${d.first_day} → ${d.last_day}`;
-  }
+  if (d.first_day && d.last_day)
+    document.getElementById('ref-date').textContent = `${d.first_day} → ${d.last_day}`;
   document.getElementById('sync-time').textContent =
     new Date().toLocaleString('en-US', { hour12: false });
 }
@@ -584,144 +512,101 @@ async function loadDaily() {
     data: {
       labels: data.map(d => d.day),
       datasets: [
-        {
-          label: 'Input',
-          data: data.map(d => d.input_tokens),
-          backgroundColor: NAVY + 'cc',
-          stack: 's',
-          borderWidth: 0,
-        },
-        {
-          label: 'Output',
-          data: data.map(d => d.output_tokens),
-          backgroundColor: RED + 'cc',
-          stack: 's',
-          borderWidth: 0,
-        },
-        {
-          label: 'Cache Read',
-          data: data.map(d => d.cache_read_tokens),
-          backgroundColor: GREEN + '55',
-          stack: 's',
-          borderWidth: 0,
-        },
+        { label: 'Input',      data: data.map(d => d.input_tokens),      backgroundColor: NAVY + 'cc', stack: 's', borderWidth: 0 },
+        { label: 'Output',     data: data.map(d => d.output_tokens),     backgroundColor: RED  + 'cc', stack: 's', borderWidth: 0 },
+        { label: 'Cache Read', data: data.map(d => d.cache_read_tokens), backgroundColor: GREEN + '44', stack: 's', borderWidth: 0 },
       ],
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
+      onClick: (evt, elements) => {
+        if (!elements.length) return;
+        const idx = elements[0].index;
+        const date = data[idx]?.day;
+        if (date) enterDrilldown(date);
+      },
+      onHover: (evt) => {
+        evt.native.target.style.cursor = 'pointer';
+      },
       plugins: {
-        legend: {
-          position: 'top',
-          align: 'end',
-          labels: { boxWidth: 8, padding: 14, color: MUTED },
+        legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED } },
+        tooltip: {
+          callbacks: {
+            footer: () => 'Click to drill down',
+          },
         },
       },
       scales: {
-        x: {
-          grid: gridOpts(),
-          ticks: tickOpts({ maxRotation: 45, font: { size: 9 } }),
-          stacked: true,
-          border: { color: 'rgba(0,0,0,0.15)' },
-        },
-        y: {
-          grid: gridOpts(),
-          ticks: {
-            ...tickOpts(),
-            callback: v => fmt(v),
-          },
-          stacked: true,
-          border: { display: false },
-        },
+        x: { grid: gridOpts(), ticks: tickOpts({ maxRotation: 45, font: { size: 9 } }), stacked: true, border: { color: 'rgba(0,0,0,0.15)' } },
+        y: { grid: gridOpts(), ticks: { ...tickOpts(), callback: v => fmt(v) }, stacked: true, border: { display: false } },
       },
     },
   });
 }
 
-async function loadHourly() {
+async function loadHourlyOverview() {
   const data = await fetchJSON(`/api/hourly?days=${days()}`);
   destroyChart('hourly');
   const allHours = Array.from({ length: 24 }, (_, i) => i);
   const byHour = Object.fromEntries(data.map(d => [d.hour, d.total_tokens]));
+  const maxVal = Math.max(...Object.values(byHour), 1);
   const ctx = document.getElementById('hourly-chart').getContext('2d');
   charts['hourly'] = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: allHours.map(h => String(h).padStart(2, '0')),
       datasets: [{
-        label: 'Tokens',
-        data: allHours.map(h => byHour[h] || 0),
+        label: 'Tokens', data: allHours.map(h => byHour[h] || 0),
         backgroundColor: allHours.map(h => {
-          const v = byHour[h] || 0;
-          const max = Math.max(...Object.values(byHour));
-          const alpha = max > 0 ? 0.2 + (v / max) * 0.75 : 0.2;
-          return `rgba(30, 58, 95, ${alpha.toFixed(2)})`;
+          const alpha = 0.18 + ((byHour[h] || 0) / maxVal) * 0.76;
+          return `rgba(30,58,95,${alpha.toFixed(2)})`;
         }),
         borderWidth: 0,
       }],
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: {
-          grid: gridOpts(),
-          ticks: tickOpts({ font: { size: 9 } }),
-          border: { color: 'rgba(0,0,0,0.15)' },
-        },
-        y: {
-          grid: gridOpts(),
-          ticks: { ...tickOpts(), callback: v => fmt(v) },
-          border: { display: false },
-        },
+        x: { grid: gridOpts(), ticks: tickOpts({ font: { size: 9 } }), border: { color: 'rgba(0,0,0,0.15)' } },
+        y: { grid: gridOpts(), ticks: { ...tickOpts(), callback: v => fmt(v) }, border: { display: false } },
       },
     },
   });
 }
 
-async function loadModels() {
+async function loadModels(canvasId = 'models-chart') {
   const data = await fetchJSON(`/api/models?days=${days()}`);
-  destroyChart('models');
-  const ctx = document.getElementById('models-chart').getContext('2d');
-  charts['models'] = new Chart(ctx, {
+  const key = canvasId === 'models-chart' ? 'models' : 'models-standalone';
+  destroyChart(key);
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  charts[key] = new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: data.map(d => d.model || 'unknown'),
       datasets: [{
         data: data.map(d => d.total_tokens),
         backgroundColor: PALETTE,
-        borderColor: '#f5f0e8',
-        borderWidth: 3,
-        hoverOffset: 6,
+        borderColor: '#f5f0e8', borderWidth: 3, hoverOffset: 6,
       }],
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: {
           position: 'right',
           labels: {
-            boxWidth: 9,
-            padding: 12,
-            color: MUTED,
-            font: { size: 10 },
+            boxWidth: 9, padding: 12, color: MUTED, font: { size: 10 },
             generateLabels(chart) {
-              const d = chart.data;
-              return d.labels.map((label, i) => ({
-                text: label.replace('claude-', '').substring(0, 18),
-                fillStyle: d.datasets[0].backgroundColor[i],
-                strokeStyle: '#f5f0e8',
-                lineWidth: 1,
-                index: i,
+              return chart.data.labels.map((label, i) => ({
+                text: label.replace('claude-', '').substring(0, 20),
+                fillStyle: chart.data.datasets[0].backgroundColor[i],
+                strokeStyle: '#f5f0e8', lineWidth: 1, index: i,
               }));
             },
           },
         },
-        tooltip: {
-          callbacks: { label: ctx => ` ${fmt(ctx.raw)} tokens` },
-        },
+        tooltip: { callbacks: { label: ctx => ` ${fmt(ctx.raw)} tokens` } },
       },
       cutout: '60%',
     },
@@ -731,97 +616,164 @@ async function loadModels() {
 async function loadProjects() {
   const data = await fetchJSON(`/api/projects?days=${days()}`);
   destroyChart('projects');
-
   const labels = data.map(d => {
     const parts = d.project_path.split('/').filter(Boolean);
     return parts.slice(-2).join('/') || d.project_path;
   });
-
   const wrap = document.getElementById('project-wrap');
-  const height = Math.max(140, labels.length * 36 + 40);
-  wrap.style.height = height + 'px';
-
+  wrap.style.height = Math.max(140, labels.length * 36 + 40) + 'px';
   const ctx = document.getElementById('projects-chart').getContext('2d');
   charts['projects'] = new Chart(ctx, {
     type: 'bar',
     data: {
       labels,
       datasets: [
-        {
-          label: 'Input',
-          data: data.map(d => d.input_tokens),
-          backgroundColor: NAVY + 'cc',
-          stack: 's',
-          borderWidth: 0,
-        },
-        {
-          label: 'Output',
-          data: data.map(d => d.output_tokens),
-          backgroundColor: RED + 'cc',
-          stack: 's',
-          borderWidth: 0,
-        },
+        { label: 'Input',  data: data.map(d => d.input_tokens),  backgroundColor: NAVY + 'cc', stack: 's', borderWidth: 0 },
+        { label: 'Output', data: data.map(d => d.output_tokens), backgroundColor: RED  + 'cc', stack: 's', borderWidth: 0 },
       ],
     },
     options: {
-      indexAxis: 'y',
-      responsive: true,
-      maintainAspectRatio: false,
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
       plugins: {
-        legend: {
-          position: 'top',
-          align: 'end',
-          labels: { boxWidth: 8, padding: 14, color: MUTED },
-        },
-        tooltip: {
-          callbacks: {
-            label: ctx => ` ${ctx.dataset.label}: ${fmt(ctx.raw)}`,
-          },
-        },
+        legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${fmt(ctx.raw)}` } },
       },
       scales: {
-        x: {
-          grid: gridOpts(),
-          ticks: { ...tickOpts(), callback: v => fmt(v) },
-          stacked: true,
-          border: { color: 'rgba(0,0,0,0.15)' },
-        },
-        y: {
-          grid: { display: false },
-          ticks: tickOpts({ font: { size: 10 } }),
-          stacked: true,
-          border: { display: false },
-        },
+        x: { grid: gridOpts(), ticks: { ...tickOpts(), callback: v => fmt(v) }, stacked: true, border: { color: 'rgba(0,0,0,0.15)' } },
+        y: { grid: { display: false }, ticks: tickOpts({ font: { size: 10 } }), stacked: true, border: { display: false } },
       },
     },
   });
 }
 
+/* ── Drilldown ─────────────────────────────────────────────── */
+async function enterDrilldown(date) {
+  drilldownDate = date;
+
+  // Update section label and show back button
+  document.getElementById('hourly-section-label').textContent = `${date} · Hour by Hour`;
+  document.getElementById('drilldown-bar').style.display = 'flex';
+  document.getElementById('drilldown-date-label').textContent = date;
+
+  // Swap layout: hide overview row, show drilldown row
+  document.getElementById('overview-row').style.display = 'none';
+  const drilldownRow = document.getElementById('drilldown-row');
+  drilldownRow.style.display = 'block';
+  drilldownRow.classList.add('fade-in');
+  document.getElementById('drilldown-chart-title').textContent = `Hour-by-Hour · ${date}`;
+
+  // Show git section
+  const gitSection = document.getElementById('git-section');
+  gitSection.style.display = 'block';
+  gitSection.classList.add('fade-in');
+
+  // Hide days-select (irrelevant in drilldown)
+  document.getElementById('days-select').style.visibility = 'hidden';
+
+  await Promise.all([loadDrilldownHourly(date), loadGitActivity(date)]);
+}
+
+function exitDrilldown() {
+  drilldownDate = null;
+  document.getElementById('hourly-section-label').textContent = 'Hourly Pattern';
+  document.getElementById('drilldown-bar').style.display = 'none';
+  document.getElementById('overview-row').style.display = 'grid';
+  document.getElementById('drilldown-row').style.display = 'none';
+  document.getElementById('git-section').style.display = 'none';
+  document.getElementById('days-select').style.visibility = 'visible';
+  destroyChart('drilldown-hourly');
+}
+
+async function loadDrilldownHourly(date) {
+  const data = await fetchJSON(`/api/hourly?date=${date}`);
+  destroyChart('drilldown-hourly');
+  const allHours = Array.from({ length: 24 }, (_, i) => i);
+  const byHour = Object.fromEntries(data.map(d => [d.hour, d]));
+  const ctx = document.getElementById('drilldown-hourly-chart').getContext('2d');
+  charts['drilldown-hourly'] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: allHours.map(h => String(h).padStart(2, '0') + ':00'),
+      datasets: [
+        { label: 'Input',  data: allHours.map(h => byHour[h]?.input_tokens  || 0), backgroundColor: NAVY + 'cc', stack: 's', borderWidth: 0 },
+        { label: 'Output', data: allHours.map(h => byHour[h]?.output_tokens || 0), backgroundColor: RED  + 'cc', stack: 's', borderWidth: 0 },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${fmt(ctx.raw)}` } },
+      },
+      scales: {
+        x: { grid: gridOpts(), ticks: tickOpts({ maxRotation: 45, font: { size: 9 } }), stacked: true, border: { color: 'rgba(0,0,0,0.15)' } },
+        y: { grid: gridOpts(), ticks: { ...tickOpts(), callback: v => fmt(v) }, stacked: true, border: { display: false } },
+      },
+    },
+  });
+}
+
+async function loadGitActivity(date) {
+  const gitContent = document.getElementById('git-content');
+  gitContent.innerHTML = '<p class="git-empty">Loading git activity…</p>';
+
+  const data = await fetchJSON(`/api/git-activity?date=${date}`);
+  const projects = Object.keys(data);
+
+  if (!projects.length) {
+    gitContent.innerHTML = '<p class="git-empty">No git commits found for this day across tracked projects.</p>';
+    return;
+  }
+
+  gitContent.innerHTML = projects.map(path => {
+    const commits = data[path];
+    const shortPath = path.split('/').filter(Boolean).slice(-2).join('/') || path;
+    const rows = commits.map(c => `
+      <div class="git-commit">
+        <span class="git-hash">${escHtml(c.hash)}</span>
+        <span class="git-time">${escHtml(c.time)}</span>
+        <span class="git-subject">${escHtml(c.subject)}</span>
+        <span class="git-author">${escHtml(c.author)}</span>
+      </div>`).join('');
+    return `
+      <div class="git-project fade-in">
+        <div class="git-project-name">${escHtml(shortPath)}</div>
+        ${rows}
+      </div>`;
+  }).join('');
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* ── Full overview load ────────────────────────────────────── */
 async function loadAll() {
+  exitDrilldown();
   await Promise.all([
-    loadSummary(),
-    loadDaily(),
-    loadHourly(),
-    loadModels(),
-    loadProjects(),
+    loadSummary(), loadDaily(), loadHourlyOverview(), loadModels(), loadProjects(),
   ]);
 }
 
-/* ── Event listeners ─────────────────────────────────────── */
+/* ── Event listeners ───────────────────────────────────────── */
 document.getElementById('days-select').addEventListener('change', loadAll);
+
+document.getElementById('back-btn').addEventListener('click', () => {
+  exitDrilldown();
+  loadHourlyOverview();
+  loadModels();
+});
 
 document.getElementById('sync-btn').addEventListener('click', async () => {
   const btn = document.getElementById('sync-btn');
-  btn.textContent = '↻ SYNCING…';
-  btn.classList.add('syncing');
-  btn.disabled = true;
+  btn.textContent = '↻ SYNCING…'; btn.classList.add('syncing'); btn.disabled = true;
   try {
     await fetch('/api/sync', { method: 'POST' });
     await loadAll();
   } finally {
-    btn.textContent = '↻ SYNC';
-    btn.classList.remove('syncing');
-    btn.disabled = false;
+    btn.textContent = '↻ SYNC'; btn.classList.remove('syncing'); btn.disabled = false;
   }
 });
 
