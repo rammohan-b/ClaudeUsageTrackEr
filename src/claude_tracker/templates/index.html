@@ -13,14 +13,14 @@
 
 :root {
   --bg:       #0b0d16;
-  --surface:  #10131f;
-  --surface2: #161b2c;
-  --surface3: #1d2338;
-  --border:   #212840;
-  --border2:  #2d3555;
-  --text:     #c4cde0;
-  --text2:    #5e6d8c;
-  --text3:    #363f58;
+  --surface:  #111420;
+  --surface2: #181d2e;
+  --surface3: #1f2540;
+  --border:   #262e4a;
+  --border2:  #333d62;
+  --text:     #dde6f5;
+  --text2:    #7c8fae;
+  --text3:    #4d5b7a;
   --blue:     #4f8ef0;
   --blue-dim: rgba(79,142,240,0.12);
   --red:      #d95757;
@@ -32,7 +32,7 @@
   --font-mono:'JetBrains Mono', 'Fira Code', monospace;
 }
 
-html { font-size: 14px; }
+html { font-size: 15px; }
 
 body {
   background: var(--bg);
@@ -86,7 +86,7 @@ body {
 }
 
 .header-brand {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -95,7 +95,7 @@ body {
 }
 
 .header-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--text);
@@ -110,7 +110,7 @@ body {
 
 .ref-date {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text2);
   letter-spacing: 0.03em;
 }
@@ -120,7 +120,7 @@ select {
   border: 1px solid var(--border2);
   color: var(--text);
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   padding: 5px 28px 5px 10px;
   border-radius: 6px;
@@ -144,7 +144,7 @@ select:focus { outline: none; border-color: var(--blue); }
   border: 1px solid rgba(79,142,240,0.35);
   color: var(--blue);
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 5px 12px;
@@ -200,10 +200,10 @@ select:focus { outline: none; border-color: var(--blue); }
 .stat-card:nth-child(7) { animation-delay: 0.28s; }
 
 .stat-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--text2);
   margin-bottom: 8px;
   white-space: nowrap;
@@ -213,7 +213,7 @@ select:focus { outline: none; border-color: var(--blue); }
 
 .stat-value {
   font-family: var(--font-mono);
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 1;
   color: var(--text);
@@ -224,7 +224,7 @@ select:focus { outline: none; border-color: var(--blue); }
 .stat-card.accent-green .stat-value { color: var(--green); }
 
 .stat-sub {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--text2);
   margin-top: 4px;
   font-weight: 500;
@@ -248,7 +248,7 @@ select:focus { outline: none; border-color: var(--blue); }
 }
 
 .section-title {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -268,7 +268,7 @@ select:focus { outline: none; border-color: var(--blue); }
 }
 
 .section-hint {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text3);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -293,9 +293,9 @@ select:focus { outline: none; border-color: var(--blue); }
 }
 
 .col-title {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text2);
   margin-bottom: 14px;
@@ -323,7 +323,7 @@ select:focus { outline: none; border-color: var(--blue); }
   border: 1px solid var(--border2);
   color: var(--text2);
   font-family: var(--font-ui);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 4px 10px;
@@ -336,14 +336,14 @@ select:focus { outline: none; border-color: var(--blue); }
 
 .drilldown-date-label {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--blue);
   letter-spacing: 0.04em;
 }
 
 .drilldown-hint {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text3);
   font-style: italic;
   margin-left: auto;
@@ -351,7 +351,7 @@ select:focus { outline: none; border-color: var(--blue); }
 
 /* ── Git activity ──────────────────────────────────────────── */
 .git-empty {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text2);
   font-style: italic;
   padding: 8px 0;
@@ -364,7 +364,7 @@ select:focus { outline: none; border-color: var(--blue); }
 
 .git-project-name {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--blue);
   letter-spacing: 0.04em;
@@ -377,8 +377,8 @@ select:focus { outline: none; border-color: var(--blue); }
   display: grid;
   grid-template-columns: 52px 42px 1fr auto;
   gap: 0 14px;
-  padding: 4px 0;
-  font-size: 12px;
+  padding: 5px 0;
+  font-size: 13px;
   line-height: 1.5;
   border-bottom: 1px solid var(--border);
 }
@@ -386,23 +386,23 @@ select:focus { outline: none; border-color: var(--blue); }
 
 .git-hash {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--amber);
   letter-spacing: 0.02em;
 }
 .git-time {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text2);
 }
 .git-subject {
   color: var(--text);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
 }
 .git-author {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text2);
   font-style: italic;
   text-align: right;
@@ -417,7 +417,7 @@ select:focus { outline: none; border-color: var(--blue); }
   padding: 12px 24px;
   margin-top: 8px;
   border-top: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text2);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -554,7 +554,7 @@ select:focus { outline: none; border-color: var(--blue); }
     <!-- Git activity (hidden in overview) -->
     <div id="git-section" style="display:none">
       <div style="padding: 0 20px; border-top: 1px solid var(--border);">
-        <div style="padding: 12px 0 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text2); display: flex; align-items: center; gap: 8px;">
+        <div style="padding: 12px 0 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text2); display: flex; align-items: center; gap: 8px;">
           <span style="width:3px;height:12px;background:var(--amber);border-radius:2px;display:inline-block;flex-shrink:0"></span>
           Git Activity
         </div>
@@ -583,8 +583,8 @@ select:focus { outline: none; border-color: var(--blue); }
 <script>
 /* ── Chart defaults ────────────────────────────────────────── */
 Chart.defaults.font.family = "'Manrope', system-ui, sans-serif";
-Chart.defaults.font.size   = 11;
-Chart.defaults.color       = '#5e6d8c';
+Chart.defaults.font.size   = 12;
+Chart.defaults.color       = '#7c8fae';
 Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
 
 const BLUE   = '#4f8ef0';
@@ -593,7 +593,7 @@ const GREEN  = '#3cb87d';
 const AMBER  = '#d9943a';
 const PURPLE = '#8b76e8';
 const TEAL   = '#2cb5a0';
-const MUTED  = '#5e6d8c';
+const MUTED  = '#7c8fae';
 const RULE   = 'rgba(255,255,255,0.05)';
 const PALETTE = [BLUE, RED, GREEN, AMBER, PURPLE, TEAL, '#e06fa0', '#5bb5d9'];
 
@@ -642,7 +642,7 @@ function stackedBarOpts(extra = {}) {
   return {
     responsive: true, maintainAspectRatio: false,
     plugins: {
-      legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED, font: { size: 11, family: "'Manrope', sans-serif" } } },
+      legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED, font: { size: 12, family: "'Manrope', sans-serif" } } },
     },
     scales: {
       x: { grid: gridOpts(), ticks: tickOpts({ font: { size: 10 } }), stacked: true, border: { color: 'rgba(255,255,255,0.08)' } },
@@ -760,7 +760,7 @@ async function loadModels() {
         legend: {
           position: 'right',
           labels: {
-            boxWidth: 9, padding: 12, color: MUTED, font: { size: 11 },
+            boxWidth: 9, padding: 12, color: MUTED, font: { size: 12 },
             generateLabels(chart) {
               return chart.data.labels.map((label, i) => ({
                 text: label.replace('claude-', '').substring(0, 22),
@@ -799,7 +799,7 @@ async function loadProjects() {
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
       plugins: {
-        legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED, font: { size: 11 } } },
+        legend: { position: 'top', align: 'end', labels: { boxWidth: 8, padding: 14, color: MUTED, font: { size: 12 } } },
         tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${fmt(ctx.raw)}` } },
       },
       scales: {
