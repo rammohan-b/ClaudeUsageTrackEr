@@ -1,0 +1,10 @@
+[Unit]
+Description=Claude Usage Tracker — run sync every 15 minutes
+Requires=claude-tracker.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=15min
+
+[Install]
+WantedBy=timers.target

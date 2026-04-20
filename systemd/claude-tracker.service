@@ -1,0 +1,11 @@
+[Unit]
+Description=Claude Usage Tracker — periodic sync
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/claude-tracker sync
+# Adjust path if using a venv: ExecStart=%h/ClaudeUsageTrackEr/.venv/bin/claude-tracker sync
+
+[Install]
+WantedBy=default.target
